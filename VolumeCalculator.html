@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>CIT 160 Tax Calculator</title>
+    </head>
+    <body>
+        <header>
+        <h1>Tax Calculator</h1>
+        <br>
+        <h2>Elijah Bjork</h2>
+        </header>
+        <main>
+            <h2>Enter your regular hours and overtime hours</h2>
+            <label>Radius: <input type="text" id="radius" value="0"></label>
+            <br>
+            <label>Height: <input type="text" id="height" value="0"></label>
+            <br>
+            <button type="button" onClick="CalculateVolume()">Calculate Pay</button>
+            <div id="output"></div>
+            <br>
+            
+        </main>
+        <footer>
+        	2021 &bull; Elijah Bjork &bull; BYU-Idaho &bull; CIT 160
+        </footer>
+        <script>
+            function CalculateVolume()
+            {            
+            //First, get necessary input.
+            let radius = parseFloat(document.getElementById("radius").value);
+            let height = parseFloat(document.getElementById("height").value);
+
+            //Second, use values to calculate Volume.
+            let volume = Math.PI * height * Math.pow(radius, 2);
+            //Third, output gross pay.
+            let text_to_display = "Volume" + volume.round();
+            document.getElementById('output').innerHTML = text_to_display;
+            }
+        </script>
+    </body>
+
+</html>
