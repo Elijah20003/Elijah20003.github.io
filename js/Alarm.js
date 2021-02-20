@@ -23,4 +23,6 @@ function SleepOrWork()
     document.getElementById("output").style.display = "block";
     
 }
+
+//Call the function upon document loading.
 SleepOrWork();
