@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8" />
+    <title>CIT 160 Template</title>
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <h1>Week 3: Array1</h1>
+        <h2>Elijah Bjork</h2>
+    </header>
+    <main style="color: white; font-size: 125%;">
+        <button type="button" onclick="test()"><b>Begin</b></button>
+        <div id="output" style="display: none"></div>
+    </main>
+
+    <footer>
+        2021 &bull; Elijah Bjork &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    <script type="text/javascript">
+
+    function addEnds(list) {
+        return list[0] + list[list.length - 1];
+    }
+
+    function getMiddle(list) {
+        len = list.length;
+        if (len % 2 == 1) {
+            mid = Math.floor(len / 2);
+            return list[mid];
+        }
+        else if (len % 2 == 0) {
+            mid = len / 2;
+            return (list[mid] + list[mid - 1]) / 2;
+        }
+    }
+
+       /* Defining Table
+        * Input: no user input
+        * Processing: Test the addEnds and getMiddle functions by calling them.
+        * Output: The values returned from the addEnds and getMiddle functions.
+        */
+        function test() {
+            let list1 = [17, 8, 9, 5, 20];
+            let list2 = [12, 4, 8, 15, 17, 5, 20, 11];
+
+            // Test the addEnds function by calling it two times.
+            let sum1 = addEnds(list1);
+            let sum2 = addEnds(list2);
+
+            // Test the getMiddle function by calling it two times.
+            let mid1 = getMiddle(list1);
+            let mid2 = getMiddle(list2);
+
+            // Build a string to display to the user.
+            let output =
+                '<b><br>' +
+                sum1 + '<br>' +
+                sum2 + '<br>' +
+                mid1 + '<br>' +
+                mid2 + '</b>';
+
+            // Display the output string for the user to see.
+            document.getElementById('output').innerHTML = output;
+            document.getElementById('output').style.display = "block";
+        }
+    </script>
+</body>
+
+</html>
